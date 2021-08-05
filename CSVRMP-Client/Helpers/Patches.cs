@@ -10,12 +10,13 @@ using UnityEngine;
 
 namespace CSVRMP_Client.Helpers
 {
-    [HarmonyPatch(typeof(UnityEngine.Object), "Instantiate", new Type[] { typeof(UnityEngine.GameObject) })]
+    [HarmonyPatch(typeof(ProductPart), "Start")]
     class ProductPartPatch
     {
-        public static void Prefix(GameObject original)
+        public static void Postfix(ProductPart __instance)
         {
-            MelonLogger.Msg(original.name);
+            var script = __instance.gameObject.AddComponent<NetworkSync>();
+            script.generateID();
         }
     }
 }

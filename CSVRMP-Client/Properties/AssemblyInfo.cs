@@ -41,4 +41,3 @@ using MelonLoader;
 // ...
 [assembly: MelonInfo(typeof(CSVRMP), "CSVR-MP", "0.0.1", "ERROR#0418")]
 [assembly: MelonGame("Game Boom VR", "CookingSimulatorVR")]
-[assembly: HarmonyDontPatchAll]

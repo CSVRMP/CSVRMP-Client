@@ -13,8 +13,6 @@ namespace CSVRMP_Client
         public override void OnApplicationStart()
         {
             MelonLogger.Warning("Game might lag for a bit, pushing patches");
-            var harmony = this.HarmonyInstance;
-            harmony.PatchAll();
         }
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
