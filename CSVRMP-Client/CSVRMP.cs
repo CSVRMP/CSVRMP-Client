@@ -12,8 +12,15 @@ namespace CSVRMP_Client
     {
         public override void OnApplicationStart()
         {
-            MelonLogger.Warning("Game might lag for a bit.");
-            MelonLogger.Msg("Setting up GameObject tracking");
+            MelonLogger.Warning("Game might lag for a bit, pushing patches");
+            var harmony = this.HarmonyInstance;
+            harmony.PatchAll();
+        }
+
+        public override void OnSceneWasLoaded(int buildIndex, string sceneName)
+        {
+            //MelonLogger.Msg("Setting up GameObject tracking for " +sceneName);
+            //Helpers.GameObjectTracking.AddScriptToAllObjects();
         }
     }
 }
