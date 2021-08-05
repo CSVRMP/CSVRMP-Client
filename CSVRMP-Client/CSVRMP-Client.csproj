@@ -281,8 +281,9 @@
   <ItemGroup>
     <Compile Include="Constants\DoNotTrack.cs" />
     <Compile Include="CSVRMP.cs" />
-    <Compile Include="Helpers\GameObjectTracking.cs" />
     <Compile Include="Helpers\Patches.cs" />
+    <Compile Include="Network\Enums.cs" />
+    <Compile Include="Network\SendingPacket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\NetworkSync.cs" />
   </ItemGroup>

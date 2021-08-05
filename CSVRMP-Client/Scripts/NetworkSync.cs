@@ -8,24 +8,16 @@ using UnityEngine;
 
 namespace CSVRMP_Client.Scripts
 {
-    class NetworkSync : MonoBehaviour
+    public class NetworkSync
     {
-        public string ID = "";
-
-        void Start()
+        public static void Awake()
         {
-            MelonLogger.Msg(gameObject.name + " has had ID Script attached");
+            MelonLogger.Msg("Starting NetworkSync script.");
         }
 
-        public void generateID()
+        public static void SendUDP(Network.SendingPacket data)
         {
-            ID = Guid.NewGuid().ToString();
-            MelonLogger.Msg("Generated ID: " + ID + " for " + gameObject.name);
-        }
-
-        public string getID()
-        {
-            return ID;
+            MelonLogger.Msg("We *would* send a packet with the following data here: " + JsonUtility.ToJson(data));
         }
     }
 }
